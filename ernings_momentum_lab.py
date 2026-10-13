@@ -1,7 +1,5 @@
 # 好決算後の翌日寄り付き買い（決算モメンタム）バックテスト実行スクリプト (Python単体)
 
-# 本スクリプトは、GASやGoogleスプレッドシートを介さず、Python環境のみで「好決算テキストのAI評価（Gemini 2.5 Flash）」から「翌日寄り付き買い（Open）でのバックテスト」までを一括処理するサンプルコードです。
-
 import os
 import time
 import json
@@ -9,17 +7,22 @@ import pandas as pd
 import yfinance as yf
 from google import genai
 from google.genai import types
+from dotenv import load_dotenv  # ★ .env 読み込み用ライブラリ
+
+# ------------------------------------------------------------------------------
+# 0. 環境変数の自動ロード (.env ファイルからの読み込み)
+# ------------------------------------------------------------------------------
+load_dotenv()  # スクリプトと同じディレクトリにある .env から GEMINI_API_KEY を読み込む
 
 # ------------------------------------------------------------------------------
 # 1. 設定パラメータ
 # ------------------------------------------------------------------------------
 TICKER_SYMBOL = "6758.T"  # テスト対象銘柄（例: ソニーグループ）
-BACKTEST_YEARS = 2        # 過去何年分を対象にするか
+BACKTEST_YEARS = 4        # 過去何年分を対象にするか
 SCORE_THRESHOLD = 80      # エントリー対象とするAI好決算スコアの閾値
-HOLD_DAYS = 3             # 保有日数（例: 翌日Open買エントリー後、N日後のCloseで売却）
+HOLD_DAYS = 4             # 保有日数（例: 翌日Open買エントリー後、N日後のCloseで売却）
 
-# Gemini API のセットアップ (環境変数 GEMINI_API_KEY を参照)
-# 例: os.environ["GEMINI_API_KEY"] = "YOUR_API_KEY"
+# Gemini API のセットアップ (環境変数 GEMINI_API_KEY から自動取得)
 client = genai.Client()
 
 
@@ -60,7 +63,7 @@ def evaluate_earnings_with_gemini(ticker: str, earnings_date_str: str, earnings_
 # ------------------------------------------------------------------------------
 # 3. バックテスト実行エンジン
 # ------------------------------------------------------------------------------
-def run_earnings_backtest(ticker: str, years=4, score_threshold=85, hold_days=3):
+def run_earnings_backtest(ticker: str, years=2, score_threshold=80, hold_days=3):
     print(f"=== {ticker} のバックテストを開始します（対象期間: 過去{years}年） ===")
     
     stock = yf.Ticker(ticker)
@@ -135,7 +138,7 @@ def run_earnings_backtest(ticker: str, years=4, score_threshold=85, hold_days=3)
             'return_pct': round(return_pct, 2)
         })
         
-        time.sleep(13) # APIレートリミット配慮
+        time.sleep(20)  # ★ 無料枠(1分間5回以内)の制限回避のため13秒待機
 
     # 3. 集計結果のレポート出力
     results_df = pd.DataFrame(trades)
