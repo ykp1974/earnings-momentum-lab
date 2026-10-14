@@ -12,6 +12,13 @@ from dotenv import load_dotenv
 # 0. 初期設定 & 環境変数ロード
 # ------------------------------------------------------------------------------
 load_dotenv()
+# ------------------------------------------------------------------------------
+# 設定パラメータ (.env から自動ロード)
+# ------------------------------------------------------------------------------
+TICKER_LIST_FILE = os.getenv("TICKER_LIST_FILE", "ticker_list.txt") # 検証対象銘柄リスト
+BACKTEST_YEARS = int(os.getenv("BACKTEST_YEARS", "5")) # 対象期間（年）
+SCORE_THRESHOLD = int(os.getenv("SCORE_THRESHOLD", "80")) # AI好決算スコアの閾値
+MAX_HOLD_DAYS = int(os.getenv("HOLD_DAYS", "5"))  # 最大保有日数(HOLD_DAYS の値を適用)
 
 groq_key = os.environ.get("GROQ_API_KEY")
 if not groq_key:
@@ -19,14 +26,6 @@ if not groq_key:
     exit(1)
 
 client = Groq(api_key=groq_key)
-
-# ------------------------------------------------------------------------------
-# 1. バックテスト設定 & グリッドサーチ探索範囲
-# ------------------------------------------------------------------------------
-TICKER_LIST_FILE = "ticker_list.txt"  # 検証対象銘柄リスト
-BACKTEST_YEARS = 5                   # 対象期間（年）
-SCORE_THRESHOLD = 80                  # AI好決算スコアの閾値
-MAX_HOLD_DAYS = 5                     # 最大保有日数
 
 # ★ 探索するイグジットパラメータのパターン
 STOP_LOSS_GRID = [-2.0, -3.0, -4.0, -5.0, None]       # 損切りライン (Noneは損切りなし)
