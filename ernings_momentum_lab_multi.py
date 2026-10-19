@@ -1,4 +1,4 @@
-# 好決算後の翌日寄り付き買い（決算モメンタム）マルチLLM対応バックテストスクリプト (モデル自動判定強化版)
+# 好決算後の翌日寄り付き買い（決算モメンタム）マルチLLM対応バックテストスクリプト (本物決算ファクトデータ生成版)
 
 import json
 import os
@@ -61,19 +61,23 @@ def get_active_model_name(requested_model: str) -> str:
     models_list = client.models.list()
     available_models = [m.id for m in models_list.data]
 
-    # リクエストされたモデルが存在すればそのまま使用
     if requested_model in available_models:
       return requested_model
 
-    # 音声(whisper)やガード(guard)等を除外したLLMモデルを抽出
     llm_models = [
         m
         for m in available_models
         if not any(
             invalid in m.lower()
-            for invalid in ["whisper", "guard", "embedding", "vision","canopylabs",
+            for invalid in [
+                "whisper",
+                "guard",
+                "embedding",
+                "vision",
+                "canopylabs",
                 "orpheus",
-                "tts",]
+                "tts",
+            ]
         )
     ]
 
@@ -102,28 +106,31 @@ def get_active_model_name(requested_model: str) -> str:
   return "llama-3.1-8b-instant"
 
 
-# 有効なモデル名の確定
 ACTIVE_MODEL = get_active_model_name(LLM_MODEL)
 
 
 # ------------------------------------------------------------------------------
-# 2. AI 決算評価関数 (マルチプロバイダー共通)
+# 2. AI 決算評価関数 (スコア & 理由の取得)
 # ------------------------------------------------------------------------------
 def evaluate_earnings_with_llm(
     ticker: str, earnings_date_str: str, earnings_text: str
-) -> int:
-  """指定された LLM プロバイダー経由で決算テキストのスコアリングを行う"""
+) -> tuple[int, str]:
+  """LLM経由で決算テキストのスコアリングと評価理由を返却する tuple(score, reason)"""
   system_prompt = (
       "あなたは優秀な株式アナリストです。指定されたフォーマットのJSONのみを絶対に出力してください。"
   )
   user_prompt = f"""
-以下は、銘柄コード {ticker} の {earnings_date_str} における決算発表データです。
-「翌営業日の株価が大幅高・モメンタムを形成する可能性」を0〜100点の数値で評価してください。
+以下は、銘柄コード {ticker} の {earnings_date_str} における決算発表データ・初期反応サマリーです。
+「翌営業日以降の株価が大幅高・強力なモメンタムを形成する可能性」を0〜100点の数値で評価してください。
+
+【評価基準の目安】
+・決算発表直後に株価が大幅上昇（+5%以上）かつ出来高が急増（2倍以上）している場合 ➔ 80点以上の高スコアを付与
+・反応が薄い、または下落・出来高不調の場合 ➔ 60点以下の低スコアを付与
 
 【出力フォーマット】
-{{"score": 数値(0-100), "reason": "評価理由（簡潔に）"}}
+{{"score": 数値(0-100), "reason": "評価理由（簡潔に1文で）"}}
 
-【決算テキスト】
+【決算サマリーデータ】
 {earnings_text}
 """
   try:
@@ -150,18 +157,20 @@ def evaluate_earnings_with_llm(
     cleaned_text = cleaned_text.strip()
 
     res_json = json.loads(cleaned_text)
-    return int(res_json.get("score", 0))
+    score = int(res_json.get("score", 0))
+    reason = str(res_json.get("reason", "理由未記述"))
+    return score, reason
 
   except Exception as e:
     print(
         f"  [{ticker} {earnings_date_str}] LLM 評価エラー"
         f" ({LLM_PROVIDER}/{ACTIVE_MODEL}): {e}"
     )
-    return 0
+    return 0, f"エラー発生: {e}"
 
 
 # ------------------------------------------------------------------------------
-# 3. 単一銘柄のバックテスト処理
+# 3. 単一銘柄のバックテスト処理 (過去の実像決算ファクト生成ロジック追加)
 # ------------------------------------------------------------------------------
 def backtest_single_ticker(
     ticker: str, years: int, score_threshold: int, hold_days: int
@@ -208,20 +217,48 @@ def backtest_single_ticker(
   for idx, row in past_earnings.iterrows():
     e_date = row["Earnings Date"].normalize()
     e_date_str = e_date.strftime("%Y-%m-%d")
-    dummy_earnings_text = (
-        f"第{idx+1}四半期決算短信：営業利益 前年同期比 +25%増益。通期予想を上方修正。"
+
+    # --- 【改善】過去の実際の株価・出来高から本物の「決算反応サマリー」を生成 ---
+    prev_prices = df_price[df_price["Date"] <= e_date]
+    future_prices = df_price[df_price["Date"] > e_date]
+
+    if prev_prices.empty or len(future_prices) < hold_days:
+      continue
+
+    # 決算直前の価格・出来高と、決算直後の価格・出来高を取得
+    last_before_idx = prev_prices.index[-1]
+    first_after_idx = future_prices.index[0]
+
+    price_before = df_price.loc[last_before_idx, "Close"]
+    price_after = df_price.loc[first_after_idx, "Close"]
+    vol_before = df_price.loc[last_before_idx, "Volume"]
+    vol_after = df_price.loc[first_after_idx, "Volume"]
+
+    # 変化率の計算
+    price_change_pct = (
+        ((price_after - price_before) / price_before) * 100.0
+        if price_before > 0
+        else 0
+    )
+    vol_ratio = (vol_after / vol_before) if vol_before > 0 else 1.0
+
+    # AIに読ませる本物の「決算サマリーデータ」を構築
+    earnings_fact_text = (
+        f"【決算発表日】: {e_date_str}\n"
+        f"【決算直後の市場反応】: 株価変化率 {price_change_pct:+.2f}%, 出来高変動"
+        f" {vol_ratio:.1f}倍\n"
+        f"【株価動向サマリー】: 発表直前の株価 {price_before:.1f}円 ➔ 発表直後の株価"
+        f" {price_after:.1f}円"
     )
 
-    score = evaluate_earnings_with_llm(ticker, e_date_str, dummy_earnings_text)
+    score, reason = evaluate_earnings_with_llm(
+        ticker, e_date_str, earnings_fact_text
+    )
 
     if score < score_threshold:
       continue
 
-    future_prices = df_price[df_price["Date"] > e_date]
-    if len(future_prices) < hold_days:
-      continue
-
-    entry_idx = future_prices.index[0]
+    entry_idx = first_after_idx
     exit_idx = entry_idx + (hold_days - 1)
 
     hold_period_df = df_price.loc[entry_idx:exit_idx]
@@ -246,6 +283,9 @@ def backtest_single_ticker(
         "entry_date": entry_date,
         "exit_date": exit_date,
         "score": score,
+        "reason": reason,
+        "llm_provider": LLM_PROVIDER,
+        "llm_model": ACTIVE_MODEL,
         "entry_price": round(entry_price, 1),
         "exit_price": round(exit_price, 1),
         "return_pct": round(return_pct, 2),
@@ -255,7 +295,7 @@ def backtest_single_ticker(
     ticker_trades.append(trade_record)
 
     print(
-        f"  [決算日: {e_date_str}] AIスコア: {score}点 -> 翌日Open買"
+        f"  [決算日: {e_date_str}] AIスコア: {score}点 ({reason}) ➔ 翌日Open買"
         f" ({entry_price:.1f}円) ➔ {hold_days}日後Close売 ({exit_price:.1f}円) |"
         f" 損益: {return_pct:+.2f}% (最大含み益: +{mfe_pct:.2f}% / 最大含み損:"
         f" {mae_pct:.2f}%)"
@@ -317,12 +357,12 @@ def run_multi_ticker_backtest():
       win_rate = (win_count / len(trades)) * 100.0
       avg_ret = sum(t["return_pct"] for t in trades) / len(trades)
       print(
-          f"  └─ 完了: {len(trades)}戦{win_count}勝{len(trades)-win_count}弊 (勝率"
+          f"  └─ 完了: {len(trades)}戦{win_count}勝{len(trades)-win_count}敗 (勝率"
           f" {win_rate:.1f}% / 平均損益 {avg_ret:+.2f}%)\n"
       )
     else:
       print(
-          f"  └─ 条件を満たすトレードシグナルはありませんでした。\n"
+          f"  └─ 条件を満たすトレードシグナルはありませんでした（AIが80点未満と判定）。\n"
       )
 
   print(
