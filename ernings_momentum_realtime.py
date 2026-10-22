@@ -7,10 +7,11 @@ import os
 import re
 import sys
 import time
+import urllib.error
 import urllib.request
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
-from openai import OpenAI
+from openai import OpenAI, RateLimitError
 import pandas as pd
 import yfinance as yf
 
@@ -21,7 +22,11 @@ load_dotenv()
 
 SCORE_THRESHOLD = int(os.getenv("SCORE_THRESHOLD", "80"))
 LLM_PROVIDER = os.getenv("LLM_PROVIDER", "groq").lower()
-LLM_MODEL = os.getenv("LLM_MODEL", "llama-3.1-8b-instant")
+LLM_MODEL = os.getenv("LLM_MODEL", "openai/gpt-oss-120b")
+# 1 回の判定で生成させる最大トークン数 (Groq 無料枠の OTPM 上限を超えないよう抑える)
+LLM_MAX_TOKENS = int(os.getenv("LLM_MAX_TOKENS", "500"))
+# 429 (レート制限) 時のリトライ回数
+LLM_MAX_RETRIES = int(os.getenv("LLM_MAX_RETRIES", "3"))
 TICKER_LIST_FILE = os.getenv("TICKER_LIST_FILE", "ticker_list.txt")
 
 # 日付指定パラメータ (.env から取得。未指定・空欄時は本日)
@@ -89,6 +94,8 @@ def get_active_model_name(requested_model: str) -> str:
     ]
 
     preferred_keywords = [
+        "gpt-oss-120b",
+        "gpt-oss-20b",
         "llama-3.3",
         "llama-3.1-8b",
         "llama-3.1-70b",
@@ -106,7 +113,7 @@ def get_active_model_name(requested_model: str) -> str:
   except Exception as e:
     print(f"モデル検証エラー: {e}")
 
-  return "llama-3.1-8b-instant"
+  return "openai/gpt-oss-120b"
 
 
 ACTIVE_MODEL = get_active_model_name(LLM_MODEL)
@@ -120,13 +127,10 @@ def fetch_tdnet_earnings(target_date_str: str) -> tuple[list, bool]:
   today_str = datetime.now().strftime("%Y-%m-%d")
 
   if not target_date_str or target_date_str == today_str:
-    tdnet_url = "https://www.release.tdnet.info/inbs/I_main_00.html"
+    date_clean = datetime.now().strftime("%Y%m%d")
     display_date = f"{today_str} (本日)"
   else:
     date_clean = target_date_str.replace("-", "").replace("/", "")
-    tdnet_url = (
-        f"https://www.release.tdnet.info/inbs/I_main_00_{date_clean}.html"
-    )
     display_date = target_date_str
 
   print(f"[1/3] TDnet から {display_date} の開示情報を取得中...")
@@ -136,50 +140,70 @@ def fetch_tdnet_earnings(target_date_str: str) -> tuple[list, bool]:
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
       )
   }
-  req = urllib.request.Request(tdnet_url, headers=headers)
+  keywords = [
+      "決算短信",
+      "業績予想",
+      "上方修正",
+      "通期業績",
+      "四半期",
+      "剰余金の配当",
+      "本決算",
+  ]
 
+  # I_main_00.html は iframe の枠だけなので、一覧本体 (I_list_NNN_YYYYMMDD.html)
+  # を 1 ページ 100 件ずつ順に取得する
+  disclosure_list = []
+  page = 1
   try:
-    with urllib.request.urlopen(req) as response:
-      html = response.read().decode("utf-8", errors="ignore")
-      soup = BeautifulSoup(html, "html.parser")
-      disclosure_list = []
-
-      rows = soup.find_all("tr")
-      for row in rows:
-        cols = row.find_all("td")
-        if len(cols) >= 5:
-          pub_time = cols[0].text.strip()
-          code_str = cols[1].text.strip()
-          company_name = cols[2].text.strip()
-          title = cols[3].text.strip()
-
-          code_match = re.search(r"\d{4}", code_str)
-          if not code_match:
-            continue
-          ticker = f"{code_match.group(0)}.T"
-
-          keywords = [
-              "決算短信",
-              "業績予想",
-              "上方修正",
-              "通期業績",
-              "四半期",
-              "剰余金の配当",
-              "本決算",
-          ]
-          if any(kw in title for kw in keywords):
-            disclosure_list.append({
-                "ticker": ticker,
-                "code": code_match.group(0),
-                "name": company_name,
-                "pub_time": pub_time,
-                "title": title,
-            })
-
-      print(
-          f"  └─ 対象日の決算・業績関連開示: 全 {len(disclosure_list)} 件検出\n"
+    while True:
+      tdnet_url = (
+          "https://www.release.tdnet.info/inbs/"
+          f"I_list_{page:03d}_{date_clean}.html"
       )
-      return disclosure_list, False
+      req = urllib.request.Request(tdnet_url, headers=headers)
+      try:
+        with urllib.request.urlopen(req) as response:
+          html = response.read().decode("utf-8", errors="ignore")
+      except urllib.error.HTTPError as e:
+        # 2 ページ目以降の 404 は最終ページ到達
+        if page > 1 and e.code == 404:
+          break
+        raise
+
+      soup = BeautifulSoup(html, "html.parser")
+      for row in soup.find_all("tr"):
+        cols = row.find_all("td")
+        if len(cols) < 5:
+          continue
+        pub_time = cols[0].text.strip()
+        code_str = cols[1].text.strip()
+        company_name = cols[2].text.strip()
+        title = cols[3].text.strip()
+
+        # 銘柄コードは 5 桁 (例: 61460, 130A0)。先頭 4 文字が証券コード
+        code_match = re.match(r"[0-9][0-9A-Z]{3}", code_str)
+        if not code_match:
+          continue
+        code = code_match.group(0)
+
+        if any(kw in title for kw in keywords):
+          disclosure_list.append({
+              "ticker": f"{code}.T",
+              "code": code,
+              "name": company_name,
+              "pub_time": pub_time,
+              "title": title,
+          })
+
+      if f"I_list_{page + 1:03d}_{date_clean}.html" not in html:
+        break
+      page += 1
+
+    print(
+        f"  └─ 対象日の決算・業績関連開示: 全 {len(disclosure_list)} 件検出"
+        f" ({page} ページ取得)\n"
+    )
+    return disclosure_list, False
 
   except Exception as e:
     print(
@@ -283,12 +307,33 @@ def evaluate_realtime_earnings(
             {"role": "user", "content": user_prompt},
         ],
         "temperature": 0.1,
+        "max_tokens": LLM_MAX_TOKENS,
     }
+
+    # 推論 (思考) モデルは思考トークンで出力上限を使い切るため、思考量を抑える
+    if LLM_PROVIDER == "groq":
+      if "gpt-oss" in ACTIVE_MODEL:
+        kwargs["reasoning_effort"] = "low"
+      elif "qwen3" in ACTIVE_MODEL:
+        kwargs["reasoning_effort"] = "none"
 
     if LLM_PROVIDER in ["groq", "deepseek"]:
       kwargs["response_format"] = {"type": "json_object"}
 
-    response = client.chat.completions.create(**kwargs)
+    for attempt in range(LLM_MAX_RETRIES + 1):
+      try:
+        response = client.chat.completions.create(**kwargs)
+        break
+      except RateLimitError as e:
+        if attempt >= LLM_MAX_RETRIES:
+          raise
+        retry_after = e.response.headers.get("retry-after")
+        wait_sec = float(retry_after) if retry_after else 20.0 * (attempt + 1)
+        print(
+            f"  [{ticker}] レート制限 (429)。{wait_sec:.0f} 秒待機して再試行"
+            f" ({attempt + 1}/{LLM_MAX_RETRIES})..."
+        )
+        time.sleep(wait_sec)
     raw_text = response.choices[0].message.content.strip()
 
     cleaned_text = raw_text
