@@ -1,0 +1,1414 @@
+{
+ "allam-2-7b|8035.T|2026-10-29": {
+  "score": 80,
+  "reason": "株価変動は-5.19%で、出来高変動は0.9倍であり、これは株価が大きな上昇を続ける可能性が高いため、スコアは80です。"
+ },
+ "allam-2-7b|8035.T|2026-07-30": {
+  "score": 80,
+  "reason": "株価変動は、株価変動率 +6.24% と出来高変動 2.2倍で、決算発表直後の株価が10371.0円から11018.2円に変化しました。これは、高いスコアを付与する理由です。"
+ },
+ "allam-2-7b|8035.T|2026-04-29": {
+  "score": 80,
+  "reason": "株価変動は-1.68%で、出来高変動は1.2倍であり、これは株価が直前の発表直後に大きな上昇を示唆しているため、より高いスコアを付与します。"
+ },
+ "allam-2-7b|8035.T|2026-02-06": {
+  "score": 80,
+  "reason": "株価変動は-1.05%で、出来高変動は2.3倍で、これはより強力な反応を示唆します。"
+ },
+ "allam-2-7b|8035.T|2025-10-31": {
+  "score": 80,
+  "reason": "株価変動は、株価変動率 +1.78%と出来高変動 1.5倍で、株価が発表直前の6722.8円から発表直後の6842.7円に大きな変動を示唆しています。このような大きな変動を示すことから、株価が発表直後に大きな反応を示すことがあります。この反応は、株価が発表直後に大きな変動を示すことから、より高いスコアを与えます。"
+ },
+ "allam-2-7b|8035.T|2025-07-31": {
+  "score": 50,
+  "reason": "株価変動は-18.02%で、出来高変動は3.7倍であり、これは株価変動が大きく、出来高が急速に増加したことを示唆しています。このような状況では、株価が上昇する可能性が高く、スコアは50です。"
+ },
+ "allam-2-7b|8035.T|2025-04-30": {
+  "score": 80,
+  "reason": "株価変動は薄いため、期待される反応は強力であると見受けられます。また、出来高が2倍増加したことも、株価の変動が大きくないため、反応が強力であると見受けられます。"
+ },
+ "openai/gpt-oss-20b|8035.T|2026-10-29": {
+  "score": 50,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|8035.T|2026-07-30": {
+  "score": 85,
+  "reason": "株価が+6.24%上昇し、出来高が2.2倍に増加したため高スコア"
+ },
+ "openai/gpt-oss-20b|8035.T|2026-04-29": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加に留まったため"
+ },
+ "openai/gpt-oss-20b|8035.T|2026-02-06": {
+  "score": 55,
+  "reason": "株価が下落し、価格上昇がないため低スコア"
+ },
+ "openai/gpt-oss-20b|8035.T|2025-10-31": {
+  "score": 55,
+  "reason": "Price rise below 5% and volume below 2x, indicating weak momentum."
+ },
+ "openai/gpt-oss-20b|8035.T|2025-07-31": {
+  "score": 30,
+  "reason": "株価が大幅下落し、出来高は増加したが、上昇モメンタムは形成されていない"
+ },
+ "openai/gpt-oss-20b|8035.T|2025-04-30": {
+  "score": 55,
+  "reason": "株価はわずかに下落し、上昇率が5%未満のため、強いモメンタムは形成されないと判断"
+ },
+ "openai/gpt-oss-20b|8035.T|2025-02-06": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も2倍未満であるため"
+ },
+ "openai/gpt-oss-20b|8035.T|2024-11-12": {
+  "score": 55,
+  "reason": "株価上昇はわずか0.88%で、モメンタムは弱い"
+ },
+ "openai/gpt-oss-20b|8035.T|2024-08-08": {
+  "score": 55,
+  "reason": "株価上昇はわずかで、出来高も2倍未満のため"
+ },
+ "openai/gpt-oss-20b|8035.T|2024-05-10": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したものの大幅上昇がないため"
+ },
+ "openai/gpt-oss-20b|8035.T|2024-02-08": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も2倍未満、反応が薄い"
+ },
+ "openai/gpt-oss-20b|8035.T|2023-11-10": {
+  "score": 55,
+  "reason": "Price increase below 5% and volume only 1.1×, indicating weak momentum."
+ },
+ "openai/gpt-oss-20b|8035.T|2023-08-10": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|8035.T|2023-05-10": {
+  "score": 55,
+  "reason": "株価上昇は5%未満で出来高も2倍未満"
+ },
+ "openai/gpt-oss-20b|8035.T|2023-02-09": {
+  "score": 70,
+  "reason": "株価は+4.35%で増加し、出来高は3.3倍と高いが、上昇率が5%未満のため中程度のモメンタムと評価"
+ },
+ "openai/gpt-oss-20b|8035.T|2022-11-09": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|8035.T|2022-08-08": {
+  "score": 55,
+  "reason": "株価が大幅下落し、出来高は増加していないため"
+ },
+ "openai/gpt-oss-20b|8035.T|2022-05-11": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加に留まったため"
+ },
+ "openai/gpt-oss-20b|8035.T|2022-02-10": {
+  "score": 50,
+  "reason": "株価が下落し、出来高も変動なし"
+ },
+ "openai/gpt-oss-20b|8035.T|2021-11-12": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も2倍未満のため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|5803.T|2026-08-06": {
+  "score": 85,
+  "reason": "株価が大幅上昇し、出来高も急増したため"
+ },
+ "openai/gpt-oss-20b|5803.T|2026-05-14": {
+  "score": 55,
+  "reason": "株価が大幅下落したため、翌営業日以降の高い上昇モメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|5803.T|2026-02-09": {
+  "score": 60,
+  "reason": "株価は上昇したが出来高が低く、強いモメンタムは形成されない"
+ },
+ "openai/gpt-oss-20b|5803.T|2025-11-06": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したが、下落が大きいため低スコア"
+ },
+ "openai/gpt-oss-20b|5803.T|2025-08-07": {
+  "score": 50,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|5803.T|2025-05-13": {
+  "score": 55,
+  "reason": "株価上昇は5%未満で、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|5803.T|2025-02-09": {
+  "score": 70,
+  "reason": "株価が5%以上上昇し、出来高は2倍未満であるため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|5803.T|2024-11-06": {
+  "score": 55,
+  "reason": "Price increase <5% and volume <2x, indicating weak momentum."
+ },
+ "openai/gpt-oss-20b|5803.T|2024-08-07": {
+  "score": 50,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|5803.T|2024-05-12": {
+  "score": 55,
+  "reason": "Price increased only 0.46% with lower volume, indicating weak momentum."
+ },
+ "openai/gpt-oss-20b|5803.T|2024-02-07": {
+  "score": 55,
+  "reason": "株価上昇は小幅で出来高も増加率が低いため"
+ },
+ "openai/gpt-oss-20b|5803.T|2023-11-07": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加しないため"
+ },
+ "openai/gpt-oss-20b|5803.T|2023-08-09": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も2倍未満"
+ },
+ "openai/gpt-oss-20b|5803.T|2023-05-11": {
+  "score": 60,
+  "reason": "株価はわずか+0.22%で大幅上昇ではないため、モメンタムは弱いと評価されます。"
+ },
+ "openai/gpt-oss-20b|5803.T|2023-02-08": {
+  "score": 55,
+  "reason": "Price rose only 0.20% and volume fell, indicating weak momentum."
+ },
+ "openai/gpt-oss-20b|8766.T|2026-08-12": {
+  "score": 55,
+  "reason": "株価が下落し、上昇幅が不足したため低スコア"
+ },
+ "openai/gpt-oss-20b|8766.T|2024-02-13": {
+  "score": 45,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|8766.T|2023-11-16": {
+  "score": 50,
+  "reason": "株価上昇がわずかで出来高も減少"
+ },
+ "openai/gpt-oss-20b|8766.T|2023-08-06": {
+  "score": 55,
+  "reason": "株価上昇は小幅で出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|8766.T|2023-05-18": {
+  "score": 55,
+  "reason": "Price fell slightly and volume decreased, indicating weak reaction."
+ },
+ "openai/gpt-oss-20b|8766.T|2023-02-14": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も2倍未満"
+ },
+ "openai/gpt-oss-20b|8766.T|2022-11-17": {
+  "score": 55,
+  "reason": "株価上昇は小幅(+2.31%)で出来高も変化なし"
+ },
+ "openai/gpt-oss-20b|8766.T|2022-08-04": {
+  "score": 50,
+  "reason": "Price increase minimal and volume decreased."
+ },
+ "openai/gpt-oss-20b|8766.T|2022-05-19": {
+  "score": 55,
+  "reason": "株価上昇が小さく、出来高も増加しないため"
+ },
+ "openai/gpt-oss-20b|8766.T|2022-02-13": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加に留まったため"
+ },
+ "openai/gpt-oss-20b|9983.T|2026-10-08": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したものの、価格上昇がないため高スコアは付与できない"
+ },
+ "openai/gpt-oss-20b|9983.T|2026-07-09": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したが、下落が大きいため低スコア"
+ },
+ "openai/gpt-oss-20b|9983.T|2026-04-09": {
+  "score": 85,
+  "reason": "株価が大幅上昇し、出来高も急増したため"
+ },
+ "openai/gpt-oss-20b|9983.T|2026-01-08": {
+  "score": 90,
+  "reason": "株価が大幅上昇し、出来高も3倍に増加したため"
+ },
+ "openai/gpt-oss-20b|9983.T|2025-10-09": {
+  "score": 85,
+  "reason": "株価が+6.65%上昇し、出来高が2.6倍に急増したため"
+ },
+ "openai/gpt-oss-20b|9983.T|2025-07-10": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したものの、上昇モメンタムは形成されていないため低スコア"
+ },
+ "openai/gpt-oss-20b|9983.T|2025-04-10": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加に留まったため"
+ },
+ "openai/gpt-oss-20b|9983.T|2025-01-08": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も2倍未満のため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|9983.T|2024-10-09": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も2倍未満のため、モメンタムは弱いと評価されます"
+ },
+ "openai/gpt-oss-20b|9983.T|2024-07-11": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したがモメンタムは弱い"
+ },
+ "openai/gpt-oss-20b|9983.T|2024-04-11": {
+  "score": 50,
+  "reason": "株価が下落し、ネガティブなモメンタムが形成されているため"
+ },
+ "openai/gpt-oss-20b|9983.T|2024-01-10": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も2倍未満のため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|9983.T|2023-10-12": {
+  "score": 85,
+  "reason": "株価が+5.75%上昇し、出来高が2.1倍に増加したため高スコア"
+ },
+ "openai/gpt-oss-20b|9983.T|2023-07-13": {
+  "score": 45,
+  "reason": "株価が下落し、反応が薄いため低スコア"
+ },
+ "openai/gpt-oss-20b|9983.T|2023-04-12": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も2倍未満"
+ },
+ "openai/gpt-oss-20b|9983.T|2023-01-12": {
+  "score": 50,
+  "reason": "株価が下落し、反応が薄いため低スコア"
+ },
+ "openai/gpt-oss-20b|9983.T|2022-10-13": {
+  "score": 85,
+  "reason": "株価が大幅上昇し、出来高も急増したため"
+ },
+ "openai/gpt-oss-20b|9983.T|2022-07-14": {
+  "score": 85,
+  "reason": "株価が+8.70%上昇し、出来高が2.6倍増加したため"
+ },
+ "openai/gpt-oss-20b|9983.T|2022-04-14": {
+  "score": 90,
+  "reason": "株価が大幅上昇し、出来高も急増したため"
+ },
+ "openai/gpt-oss-20b|9983.T|2022-01-13": {
+  "score": 85,
+  "reason": "株価が+8%で出来高2.2倍、強いモメンタムが形成される"
+ },
+ "openai/gpt-oss-20b|1605.T|2026-08-06": {
+  "score": 55,
+  "reason": "Price increase modest and volume moderate, unlikely to form strong momentum."
+ },
+ "openai/gpt-oss-20b|1605.T|2026-05-12": {
+  "score": 55,
+  "reason": "Price fell slightly and volume modestly increased, no strong momentum."
+ },
+ "openai/gpt-oss-20b|1605.T|2026-02-12": {
+  "score": 40,
+  "reason": "株価が大幅下落し、出来高は増加したものの、上昇モメンタムは形成されていない"
+ },
+ "openai/gpt-oss-20b|1605.T|2025-11-12": {
+  "score": 55,
+  "reason": "株価がわずかに下落し、出来高も2倍未満であるため、翌営業日以降に大幅高・強力なモメンタムが形成される可能性は低い"
+ },
+ "openai/gpt-oss-20b|1605.T|2025-08-07": {
+  "score": 55,
+  "reason": "株価上昇は5%未満で、出来高は増加したものの総合的なモメンタムは弱いと判断"
+ },
+ "openai/gpt-oss-20b|1605.T|2025-05-13": {
+  "score": 55,
+  "reason": "株価上昇は緩やかで出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|1605.T|2025-02-13": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も2倍未満であるため"
+ },
+ "openai/gpt-oss-20b|1605.T|2024-11-12": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も変動なし"
+ },
+ "openai/gpt-oss-20b|1605.T|2024-08-07": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も減少し、勢いが弱い"
+ },
+ "openai/gpt-oss-20b|1605.T|2024-05-13": {
+  "score": 55,
+  "reason": "株価はわずかに下落し、出来高は増加したものの、上昇幅が不足しているため低スコア"
+ },
+ "openai/gpt-oss-20b|1605.T|2024-02-12": {
+  "score": 55,
+  "reason": "株価上昇は+0.90%と小幅であり、モメンタム形成の可能性は低い"
+ },
+ "openai/gpt-oss-20b|1605.T|2023-11-09": {
+  "score": 50,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|1605.T|2023-08-09": {
+  "score": 90,
+  "reason": "株価が大幅上昇し、出来高も急増したため高スコア"
+ },
+ "openai/gpt-oss-20b|1605.T|2023-05-09": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も2倍未満であるため"
+ },
+ "openai/gpt-oss-20b|1605.T|2023-02-09": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も2倍未満であるため"
+ },
+ "openai/gpt-oss-20b|1605.T|2022-11-08": {
+  "score": 45,
+  "reason": "株価が下落し、出来高も2倍未満であるため、翌営業日以降に大幅高・強力なモメンタムが形成される可能性は低い"
+ },
+ "openai/gpt-oss-20b|1605.T|2022-08-08": {
+  "score": 55,
+  "reason": "株価上昇は小幅でモメンタムが弱い"
+ },
+ "openai/gpt-oss-20b|1605.T|2022-05-10": {
+  "score": 55,
+  "reason": "株価上昇がわずかで出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|1605.T|2022-02-09": {
+  "score": 45,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|1605.T|2021-11-04": {
+  "score": 55,
+  "reason": "株価上昇が小さく、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|8058.T|2026-08-03": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|8058.T|2026-05-01": {
+  "score": 55,
+  "reason": "株価上昇は5%未満で出来高も減少しているため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|8058.T|2026-02-05": {
+  "score": 55,
+  "reason": "株価上昇は5%未満で出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|8058.T|2025-11-04": {
+  "score": 55,
+  "reason": "株価上昇がわずかで出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|8058.T|2025-08-04": {
+  "score": 55,
+  "reason": "株価上昇率が低く、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|8058.T|2025-05-02": {
+  "score": 55,
+  "reason": "株価上昇は5%未満で出来高も増加しないため"
+ },
+ "openai/gpt-oss-20b|8058.T|2025-02-06": {
+  "score": 55,
+  "reason": "Price barely rose and volume fell, indicating weak momentum."
+ },
+ "openai/gpt-oss-20b|8058.T|2024-10-31": {
+  "score": 55,
+  "reason": "株価が下落し、モメンタムは弱いと判断されます"
+ },
+ "openai/gpt-oss-20b|8058.T|2024-07-31": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したが、上昇幅が不足しているため低スコア"
+ },
+ "openai/gpt-oss-20b|8058.T|2024-05-01": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したものの、価格上昇がないため低スコア"
+ },
+ "openai/gpt-oss-20b|8058.T|2024-02-06": {
+  "score": 90,
+  "reason": "株価が大幅上昇し、出来高も急増したため高スコア"
+ },
+ "openai/gpt-oss-20b|8058.T|2023-11-02": {
+  "score": 55,
+  "reason": "株価上昇は5%未満で出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|8058.T|2023-08-03": {
+  "score": 45,
+  "reason": "Price up only 1.04% and volume fell to 0.7x, indicating weak momentum."
+ },
+ "openai/gpt-oss-20b|8058.T|2023-05-09": {
+  "score": 70,
+  "reason": "株価は+3.73%で上昇し、出来高は2.4倍と高いが上昇率が5%未満のため"
+ },
+ "openai/gpt-oss-20b|8058.T|2023-02-02": {
+  "score": 55,
+  "reason": "株価変化がほぼゼロで出来高も増加しすぎず、モメンタムは弱い"
+ },
+ "openai/gpt-oss-20b|8058.T|2022-11-08": {
+  "score": 45,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|8058.T|2022-08-02": {
+  "score": 55,
+  "reason": "株価上昇は5%未満で出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|8058.T|2022-05-09": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も2倍未満であるため"
+ },
+ "openai/gpt-oss-20b|8058.T|2022-02-03": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も減少したため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|8058.T|2021-11-04": {
+  "score": 55,
+  "reason": "Price declined and volume only modestly increased, indicating weak momentum."
+ },
+ "openai/gpt-oss-20b|6178.T|2026-08-06": {
+  "score": 55,
+  "reason": "株価上昇は小幅で出来高も増加率が低く、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|6178.T|2026-05-15": {
+  "score": 68,
+  "reason": "Price increase just below 5% with strong volume, moderate momentum"
+ },
+ "openai/gpt-oss-20b|6178.T|2026-02-13": {
+  "score": 50,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|6178.T|2025-11-13": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加に留まったため"
+ },
+ "openai/gpt-oss-20b|6178.T|2025-08-07": {
+  "score": 55,
+  "reason": "Price increase modest and volume not significant."
+ },
+ "openai/gpt-oss-20b|6178.T|2025-05-15": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したものの、上昇幅が不足しているため低スコア"
+ },
+ "openai/gpt-oss-20b|6178.T|2025-02-13": {
+  "score": 55,
+  "reason": "Price rose <5% and volume fell, indicating weak momentum"
+ },
+ "openai/gpt-oss-20b|6178.T|2024-11-13": {
+  "score": 55,
+  "reason": "株価上昇はわずかで出来高も増加していないため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|6178.T|2024-08-08": {
+  "score": 55,
+  "reason": "株価上昇はわずかで出来高も増加しないため"
+ },
+ "openai/gpt-oss-20b|6178.T|2024-05-14": {
+  "score": 55,
+  "reason": "株価上昇はわずかで出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|6178.T|2024-02-13": {
+  "score": 45,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|6178.T|2023-11-12": {
+  "score": 55,
+  "reason": "株価上昇が小幅で出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|6178.T|2023-08-09": {
+  "score": 55,
+  "reason": "Price rose only 1.07% with unchanged volume, indicating weak momentum."
+ },
+ "openai/gpt-oss-20b|6178.T|2023-05-14": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も減少したため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|6178.T|2023-02-13": {
+  "score": 55,
+  "reason": "株価上昇はわずかで出来高も増加していないため"
+ },
+ "openai/gpt-oss-20b|6178.T|2022-11-10": {
+  "score": 55,
+  "reason": "Price fell slightly and volume did not double, indicating weak momentum."
+ },
+ "openai/gpt-oss-20b|6178.T|2022-08-09": {
+  "score": 55,
+  "reason": "株価上昇が小さく、出来高も変わらないため"
+ },
+ "openai/gpt-oss-20b|6178.T|2022-05-12": {
+  "score": 55,
+  "reason": "株価上昇は5%未満で出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|6178.T|2022-02-13": {
+  "score": 55,
+  "reason": "株価上昇はわずかで出来高も増加していないため"
+ },
+ "openai/gpt-oss-20b|6178.T|2021-11-11": {
+  "score": 55,
+  "reason": "Price increase below 5% and volume not doubling, indicating weak momentum."
+ },
+ "openai/gpt-oss-20b|6367.T|2026-08-03": {
+  "score": 55,
+  "reason": "Price increase below 5% and volume below 2x, indicating weak momentum."
+ },
+ "openai/gpt-oss-20b|6367.T|2026-05-12": {
+  "score": 85,
+  "reason": "株価が+6.93%上昇し、出来高が2.4倍増加したため高スコア"
+ },
+ "openai/gpt-oss-20b|6367.T|2026-02-04": {
+  "score": 55,
+  "reason": "株価が大幅下落し、出来高は増加したが、下落したため高スコアは付与できない"
+ },
+ "openai/gpt-oss-20b|6367.T|2025-11-05": {
+  "score": 85,
+  "reason": "株価が+5%以上上昇し、出来高が2倍以上増加したため"
+ },
+ "openai/gpt-oss-20b|6367.T|2025-08-05": {
+  "score": 55,
+  "reason": "株価上昇率が5%未満であるため、強力なモメンタムは形成されない"
+ },
+ "openai/gpt-oss-20b|6367.T|2025-05-08": {
+  "score": 55,
+  "reason": "株価が5%以上下落し、出来高は増加したものの、価格上昇がないため低スコア"
+ },
+ "openai/gpt-oss-20b|6367.T|2025-02-05": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したが、上昇幅がないため低スコア"
+ },
+ "openai/gpt-oss-20b|6367.T|2024-11-06": {
+  "score": 85,
+  "reason": "株価が+6.73%上昇し、出来高が2.3倍増加したため"
+ },
+ "openai/gpt-oss-20b|6367.T|2024-08-05": {
+  "score": 70,
+  "reason": "株価が大幅上昇したが出来高は2倍に達していない"
+ },
+ "openai/gpt-oss-20b|6367.T|2024-05-08": {
+  "score": 70,
+  "reason": "株価は+2.47%で増加し、出来高は2.1倍と高いが、上昇幅が5%未満のため中程度のスコア"
+ },
+ "openai/gpt-oss-20b|6367.T|2024-02-06": {
+  "score": 55,
+  "reason": "株価が5%以上下落したため、翌営業日以降の大幅上昇は期待できない"
+ },
+ "openai/gpt-oss-20b|6367.T|2023-11-07": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も2倍未満であるため"
+ },
+ "openai/gpt-oss-20b|6367.T|2023-08-08": {
+  "score": 30,
+  "reason": "株価が大幅下落し、出来高は増加したが、モメンタムは弱い"
+ },
+ "openai/gpt-oss-20b|6367.T|2023-05-08": {
+  "score": 55,
+  "reason": "株価上昇が小幅で出来高も増加していないため"
+ },
+ "openai/gpt-oss-20b|6367.T|2023-02-06": {
+  "score": 55,
+  "reason": "Price rose only 0.33% and volume fell, indicating weak momentum."
+ },
+ "openai/gpt-oss-20b|6367.T|2022-11-08": {
+  "score": 55,
+  "reason": "株価が5%以上下落し、出来高は増加したものの、価格上昇がないため低スコア"
+ },
+ "openai/gpt-oss-20b|6367.T|2022-08-01": {
+  "score": 45,
+  "reason": "株価が下落し、出来高も増加しないため"
+ },
+ "openai/gpt-oss-20b|6367.T|2022-05-09": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も増加していないため"
+ },
+ "openai/gpt-oss-20b|6367.T|2022-02-06": {
+  "score": 45,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|6367.T|2021-11-03": {
+  "score": 55,
+  "reason": "株価上昇は小幅で出来高も増加しないため"
+ },
+ "openai/gpt-oss-20b|2914.T|2026-10-28": {
+  "score": 55,
+  "reason": "株価上昇はわずかで、出来高も2倍未満のため高いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|2914.T|2026-07-30": {
+  "score": 85,
+  "reason": "株価が+7.05%上昇し、出来高が2.2倍増加したため高いモメンタムが形成される可能性が高い"
+ },
+ "openai/gpt-oss-20b|2914.T|2026-05-08": {
+  "score": 85,
+  "reason": "株価が5%以上上昇し、出来高が2倍以上増加したため"
+ },
+ "openai/gpt-oss-20b|2914.T|2026-02-12": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したが上昇幅が不足しているため"
+ },
+ "openai/gpt-oss-20b|2914.T|2025-10-30": {
+  "score": 85,
+  "reason": "株価が大幅上昇し、出来高も急増したため"
+ },
+ "openai/gpt-oss-20b|2914.T|2025-07-31": {
+  "score": 90,
+  "reason": "株価が5%以上上昇し、出来高が5倍以上増加したため高スコア"
+ },
+ "openai/gpt-oss-20b|2914.T|2025-05-07": {
+  "score": 55,
+  "reason": "Price increase below 5% and volume below 2x, indicating weak momentum."
+ },
+ "openai/gpt-oss-20b|2914.T|2025-02-13": {
+  "score": 45,
+  "reason": "株価が下落し、反応が薄いため低スコア"
+ },
+ "openai/gpt-oss-20b|2914.T|2024-10-31": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も2倍未満であるため"
+ },
+ "openai/gpt-oss-20b|2914.T|2024-08-02": {
+  "score": 45,
+  "reason": "株価が大幅下落し、出来高は増加したが、下落が大きいためモメンタムは低い"
+ },
+ "openai/gpt-oss-20b|2914.T|2024-05-09": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も2倍未満"
+ },
+ "openai/gpt-oss-20b|2914.T|2024-02-13": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は2倍未満であるため、翌営業日以降に大幅高・強力なモメンタムが形成される可能性は低い"
+ },
+ "openai/gpt-oss-20b|2914.T|2023-10-30": {
+  "score": 55,
+  "reason": "Price rise below 5% and volume below 2x, indicating weak momentum."
+ },
+ "openai/gpt-oss-20b|2914.T|2023-07-31": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加に留まったため"
+ },
+ "openai/gpt-oss-20b|2914.T|2023-05-02": {
+  "score": 60,
+  "reason": "株価上昇は小幅でモメンタムは弱い"
+ },
+ "openai/gpt-oss-20b|2914.T|2023-02-14": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も2倍未満のため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|2914.T|2022-10-30": {
+  "score": 50,
+  "reason": "株価上昇が5%未満で出来高も減少したため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|2914.T|2022-07-28": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も2倍未満であるため、翌営業日以降に大幅高・強力なモメンタムが形成される可能性は低い"
+ },
+ "openai/gpt-oss-20b|2914.T|2022-04-28": {
+  "score": 55,
+  "reason": "Price increase only 0.20% with modest volume rise, unlikely to form strong momentum."
+ },
+ "openai/gpt-oss-20b|2914.T|2022-02-14": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も2倍未満であるため"
+ },
+ "openai/gpt-oss-20b|7203.T|2026-08-04": {
+  "score": 55,
+  "reason": "株価がわずかに下落し、出来高も減少したため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|7203.T|2026-05-08": {
+  "score": 45,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|7203.T|2026-02-06": {
+  "score": 45,
+  "reason": "株価が下落し、出来高も減少したため、翌営業日以降に大幅高・強力なモメンタムが形成される可能性は低いと判断しました"
+ },
+ "openai/gpt-oss-20b|7203.T|2025-11-05": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も減少したため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|7203.T|2025-08-06": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したものの、価格上昇がないため低スコア"
+ },
+ "openai/gpt-oss-20b|7203.T|2025-05-08": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も減少したため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|7203.T|2025-02-04": {
+  "score": 60,
+  "reason": "株価上昇率が5%未満であるため、評価は60点に留まります"
+ },
+ "openai/gpt-oss-20b|7203.T|2024-11-05": {
+  "score": 55,
+  "reason": "Price rose modestly (1.72%) despite high volume, insufficient for strong momentum."
+ },
+ "openai/gpt-oss-20b|7203.T|2024-08-01": {
+  "score": 45,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|7203.T|2024-05-08": {
+  "score": 45,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|7203.T|2024-02-05": {
+  "score": 70,
+  "reason": "Price rose 4.78% (just below 5%) but volume surged 2.7×, indicating moderate momentum."
+ },
+ "openai/gpt-oss-20b|7203.T|2023-11-01": {
+  "score": 55,
+  "reason": "株価上昇は5%未満で出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|7203.T|2023-07-31": {
+  "score": 60,
+  "reason": "株価上昇は5%未満で出来高も2倍未満"
+ },
+ "openai/gpt-oss-20b|7203.T|2023-05-10": {
+  "score": 50,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|7203.T|2023-02-08": {
+  "score": 65,
+  "reason": "株価はわずか+0.18%の上昇に留まり、5%超の大幅上昇はないものの、出来高が2.5倍と急増しているため中程度の評価としました"
+ },
+ "openai/gpt-oss-20b|7203.T|2022-10-31": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も2倍未満であるため"
+ },
+ "openai/gpt-oss-20b|7203.T|2022-08-03": {
+  "score": 55,
+  "reason": "株価が下落し、反応が薄い"
+ },
+ "openai/gpt-oss-20b|7203.T|2022-05-11": {
+  "score": 45,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|7203.T|2022-02-08": {
+  "score": 55,
+  "reason": "株価上昇が5%未満であり、モメンタムは弱い"
+ },
+ "openai/gpt-oss-20b|7203.T|2021-11-03": {
+  "score": 55,
+  "reason": "株価上昇はわずか0.73%であり、5%超の大幅上昇がないため低スコア"
+ },
+ "openai/gpt-oss-20b|8306.T|2026-08-03": {
+  "score": 45,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|8306.T|2026-05-15": {
+  "score": 55,
+  "reason": "株価上昇は5%未満で出来高も2倍未満"
+ },
+ "openai/gpt-oss-20b|8306.T|2026-02-04": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加に留まったため"
+ },
+ "openai/gpt-oss-20b|8306.T|2025-11-14": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も変動なしのため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|8306.T|2025-08-04": {
+  "score": 55,
+  "reason": "株価上昇はわずかで出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|8306.T|2025-05-15": {
+  "score": 55,
+  "reason": "株価上昇は+0.88%であり、出来高も2倍未満の1.6倍にとどまるため、強力なモメンタムは形成されないと判断"
+ },
+ "openai/gpt-oss-20b|8306.T|2025-02-04": {
+  "score": 45,
+  "reason": "株価が下落し、出来高も2倍未満であるため、翌営業日以降に大幅高・強力なモメンタムが形成される可能性は低い"
+ },
+ "openai/gpt-oss-20b|8306.T|2024-11-14": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も2倍未満"
+ },
+ "openai/gpt-oss-20b|8306.T|2024-08-01": {
+  "score": 55,
+  "reason": "株価が大幅下落し、出来高も増加しないため"
+ },
+ "openai/gpt-oss-20b|8306.T|2024-05-15": {
+  "score": 55,
+  "reason": "株価が下落し、モメンタムは弱い"
+ },
+ "openai/gpt-oss-20b|8306.T|2024-02-04": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も2倍未満"
+ },
+ "openai/gpt-oss-20b|8306.T|2023-11-14": {
+  "score": 55,
+  "reason": "株価が下落し、上昇ではないため低スコア"
+ },
+ "openai/gpt-oss-20b|8306.T|2023-08-01": {
+  "score": 55,
+  "reason": "株価がわずかに下落し、出来高は2倍未満であるため、翌営業日以降に大幅高・強力なモメンタムが形成される可能性は低いです"
+ },
+ "openai/gpt-oss-20b|8306.T|2023-05-15": {
+  "score": 65,
+  "reason": "株価は+2.78%と5%未満であるが、出来高が2倍に増加したため中程度の評価としました"
+ },
+ "openai/gpt-oss-20b|8306.T|2023-02-01": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|8306.T|2022-11-14": {
+  "score": 55,
+  "reason": "株価上昇は5%未満で出来高も2倍未満"
+ },
+ "openai/gpt-oss-20b|8306.T|2022-08-02": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も2倍未満であるため"
+ },
+ "openai/gpt-oss-20b|8306.T|2022-05-15": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も2倍未満であるため"
+ },
+ "openai/gpt-oss-20b|8306.T|2022-02-02": {
+  "score": 30,
+  "reason": "株価変化率がわずかで出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|8306.T|2021-11-14": {
+  "score": 55,
+  "reason": "株価上昇がわずかで出来高も増加しすぎず、モメンタムは弱い"
+ },
+ "openai/gpt-oss-20b|1812.T|2026-08-04": {
+  "score": 55,
+  "reason": "株価が下落し、モメンタムは弱い"
+ },
+ "openai/gpt-oss-20b|1812.T|2026-05-13": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加しないため、モメンタムは弱い"
+ },
+ "openai/gpt-oss-20b|1812.T|2026-02-11": {
+  "score": 55,
+  "reason": "株価が下落し、モメンタムは弱い"
+ },
+ "openai/gpt-oss-20b|1812.T|2025-11-10": {
+  "score": 90,
+  "reason": "株価が大幅上昇し、出来高も急増したため高スコア"
+ },
+ "openai/gpt-oss-20b|1812.T|2025-08-05": {
+  "score": 85,
+  "reason": "株価が+5.39%上昇し、出来高が3倍に増加したため高スコア"
+ },
+ "openai/gpt-oss-20b|1812.T|2025-05-13": {
+  "score": 55,
+  "reason": "株価がわずかに下落し、出来高は2倍未満の増加に留まったため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|1812.T|2025-02-11": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したものの、上昇幅が不足しているため高スコアは付与できない"
+ },
+ "openai/gpt-oss-20b|1812.T|2024-11-11": {
+  "score": 72,
+  "reason": "Moderate price increase with strong volume suggests potential momentum."
+ },
+ "openai/gpt-oss-20b|1812.T|2024-08-05": {
+  "score": 70,
+  "reason": "株価が大幅上昇したが出来高は増加しなかったため"
+ },
+ "openai/gpt-oss-20b|1812.T|2024-05-13": {
+  "score": 55,
+  "reason": "株価が大幅下落し、出来高は増加したものの、翌営業日以降の上昇モメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|1812.T|2024-02-12": {
+  "score": 55,
+  "reason": "Price rose <5% and volume decreased, indicating weak momentum."
+ },
+ "openai/gpt-oss-20b|1812.T|2023-11-12": {
+  "score": 55,
+  "reason": "株価が下落し、上昇モメンタムが形成されていないため低スコア"
+ },
+ "openai/gpt-oss-20b|1812.T|2023-08-08": {
+  "score": 90,
+  "reason": "株価が大幅上昇し、出来高も急増したため"
+ },
+ "openai/gpt-oss-20b|1812.T|2023-05-14": {
+  "score": 55,
+  "reason": "株価上昇は5%未満で出来高も2倍未満"
+ },
+ "openai/gpt-oss-20b|1812.T|2023-02-13": {
+  "score": 85,
+  "reason": "株価が+5.41%上昇し、出来高が2.5倍に増加したため"
+ },
+ "openai/gpt-oss-20b|1812.T|2022-11-09": {
+  "score": 85,
+  "reason": "株価が+6.91%上昇し、出来高が3.1倍に急増したため"
+ },
+ "openai/gpt-oss-20b|9432.T|2026-08-06": {
+  "score": 55,
+  "reason": "株価上昇は小幅で出来高も増加していないため"
+ },
+ "openai/gpt-oss-20b|9432.T|2026-05-08": {
+  "score": 55,
+  "reason": "Price fell and volume modest, low momentum."
+ },
+ "openai/gpt-oss-20b|9432.T|2026-02-04": {
+  "score": 45,
+  "reason": "株価上昇が5%未満で出来高も2倍未満のため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|9432.T|2025-11-03": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したが、価格上昇がないため低スコア"
+ },
+ "openai/gpt-oss-20b|9432.T|2025-08-06": {
+  "score": 55,
+  "reason": "株価上昇は小幅で出来高も増加しないため"
+ },
+ "openai/gpt-oss-20b|9432.T|2025-05-09": {
+  "score": 55,
+  "reason": "株価上昇は小幅で出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|9432.T|2025-02-07": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加に留まったため"
+ },
+ "openai/gpt-oss-20b|9432.T|2024-11-07": {
+  "score": 55,
+  "reason": "Price rose only 0.13% with reduced volume, indicating weak momentum."
+ },
+ "openai/gpt-oss-20b|9432.T|2024-08-07": {
+  "score": 45,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|9432.T|2024-05-09": {
+  "score": 55,
+  "reason": "株価が下落し、モメンタムは弱い"
+ },
+ "openai/gpt-oss-20b|9432.T|2024-02-08": {
+  "score": 45,
+  "reason": "Price increase <5% and volume decreased, indicating weak momentum."
+ },
+ "openai/gpt-oss-20b|9432.T|2023-11-07": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したものの大幅上昇がないため低スコア"
+ },
+ "openai/gpt-oss-20b|9432.T|2023-08-09": {
+  "score": 55,
+  "reason": "株価上昇が小幅で出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|9432.T|2023-05-12": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も増加率が低い"
+ },
+ "openai/gpt-oss-20b|9432.T|2023-02-08": {
+  "score": 55,
+  "reason": "Price fell and volume modestly increased, no strong momentum."
+ },
+ "openai/gpt-oss-20b|9432.T|2022-11-08": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も変動なし"
+ },
+ "openai/gpt-oss-20b|9432.T|2022-08-08": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加しないため低スコア"
+ },
+ "openai/gpt-oss-20b|9432.T|2022-05-11": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したが上昇幅が不足"
+ },
+ "openai/gpt-oss-20b|9432.T|2022-02-07": {
+  "score": 55,
+  "reason": "株価上昇はわずかで出来高も2倍未満のため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|9432.T|2021-11-09": {
+  "score": 55,
+  "reason": "Price rose modestly and volume unchanged, so unlikely to form strong momentum."
+ },
+ "openai/gpt-oss-20b|4502.T|2026-10-28": {
+  "score": 55,
+  "reason": "株価上昇は+5%未満で、出来高も2倍未満のため、強力なモメンタムは形成されにくい"
+ },
+ "openai/gpt-oss-20b|4502.T|2026-07-30": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加に留まったため"
+ },
+ "openai/gpt-oss-20b|4502.T|2026-05-13": {
+  "score": 55,
+  "reason": "株価上昇は+1.23%で出来高も1.4倍と、基準に達していないため低スコア"
+ },
+ "openai/gpt-oss-20b|4502.T|2026-01-28": {
+  "score": 55,
+  "reason": "株価上昇は小幅で出来高も増加しすぎないため"
+ },
+ "openai/gpt-oss-20b|4502.T|2025-10-29": {
+  "score": 55,
+  "reason": "株価上昇は小幅で出来高も増加率が低く、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|4502.T|2025-07-30": {
+  "score": 55,
+  "reason": "株価が下落し、反応が薄いため低スコア"
+ },
+ "openai/gpt-oss-20b|4502.T|2025-05-07": {
+  "score": 50,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|4502.T|2025-01-30": {
+  "score": 55,
+  "reason": "株価上昇が5%未満であるため、モメンタムは弱いと評価"
+ },
+ "openai/gpt-oss-20b|4502.T|2024-10-30": {
+  "score": 55,
+  "reason": "株価上昇がわずかで出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|4502.T|2024-07-31": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も2倍未満であるため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|4502.T|2024-05-09": {
+  "score": 65,
+  "reason": "株価はわずかに上昇し、出来高は急増したが、上昇幅が5%未満であるため"
+ },
+ "openai/gpt-oss-20b|4502.T|2024-02-01": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は2倍未満であるため、強いモメンタムは形成されないと判断"
+ },
+ "openai/gpt-oss-20b|4502.T|2023-10-25": {
+  "score": 55,
+  "reason": "株価がわずかに下落し、出来高は2倍未満の増加に留まったため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|4502.T|2023-07-26": {
+  "score": 55,
+  "reason": "Price rise modest and volume not significant."
+ },
+ "openai/gpt-oss-20b|4502.T|2023-05-11": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したものの、上昇モメンタムは形成されていないため低スコア"
+ },
+ "openai/gpt-oss-20b|4502.T|2023-02-02": {
+  "score": 55,
+  "reason": "Moderate gain and volume insufficient for strong momentum."
+ },
+ "openai/gpt-oss-20b|4502.T|2022-10-27": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も2倍未満"
+ },
+ "openai/gpt-oss-20b|4502.T|2022-07-28": {
+  "score": 55,
+  "reason": "Price fell and volume only modestly increased, indicating weak reaction."
+ },
+ "openai/gpt-oss-20b|4502.T|2022-05-11": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したが、上昇幅が不足しているため低スコア"
+ },
+ "openai/gpt-oss-20b|4502.T|2022-02-03": {
+  "score": 55,
+  "reason": "株価上昇は小幅で出来高も増加率が低いため"
+ },
+ "openai/gpt-oss-20b|6098.T|2026-08-07": {
+  "score": 70,
+  "reason": "株価が大幅上昇したが出来高は2倍未満であるため、スコアは70点"
+ },
+ "openai/gpt-oss-20b|6098.T|2026-05-14": {
+  "score": 55,
+  "reason": "株価上昇はわずかで出来高も増加率が低く、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|6098.T|2026-02-09": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も増加率が低いため"
+ },
+ "openai/gpt-oss-20b|6098.T|2025-11-06": {
+  "score": 90,
+  "reason": "株価が大幅上昇し、出来高も急増したため"
+ },
+ "openai/gpt-oss-20b|6098.T|2025-08-05": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も2倍未満であるため"
+ },
+ "openai/gpt-oss-20b|6098.T|2025-05-09": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加しないため低スコア"
+ },
+ "openai/gpt-oss-20b|6098.T|2025-02-11": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したが、価格上昇がないため低スコア"
+ },
+ "openai/gpt-oss-20b|6098.T|2024-08-07": {
+  "score": 55,
+  "reason": "株価がわずかに下落し、出来高も減少したため、翌営業日以降に大幅高・強力なモメンタムが形成される可能性は低い"
+ },
+ "openai/gpt-oss-20b|6098.T|2024-05-15": {
+  "score": 90,
+  "reason": "株価が+9.11%上昇し、出来高が2.9倍増加したため高いモメンタムが形成される可能性が高い"
+ },
+ "openai/gpt-oss-20b|6098.T|2024-02-09": {
+  "score": 70,
+  "reason": "株価が大幅上昇したが出来高は2倍未満であるため"
+ },
+ "openai/gpt-oss-20b|6098.T|2023-11-08": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加しないため"
+ },
+ "openai/gpt-oss-20b|6098.T|2023-08-10": {
+  "score": 70,
+  "reason": "株価が+5%を超えたが出来高は2倍未満であるため"
+ },
+ "openai/gpt-oss-20b|6098.T|2023-05-15": {
+  "score": 70,
+  "reason": "株価は+3.46%と大幅上昇ではないが、出来高が2.5倍と強い取引活動が見られ、翌営業日以降に高いモメンタムが形成される可能性がある"
+ },
+ "openai/gpt-oss-20b|6098.T|2023-02-12": {
+  "score": 55,
+  "reason": "株価がわずかに下落し、出来高も減少したため、翌営業日以降に大幅高・強力なモメンタムが形成される可能性は低いと判断しました。"
+ },
+ "openai/gpt-oss-20b|6098.T|2022-11-13": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も減少したため、翌営業日以降の大幅高・強力なモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|6098.T|2022-08-12": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|6098.T|2022-05-16": {
+  "score": 55,
+  "reason": "株価上昇は5%未満で出来高も2倍未満"
+ },
+ "openai/gpt-oss-20b|6098.T|2022-02-14": {
+  "score": 30,
+  "reason": "株価が大幅下落し、出来高は増加したが、モメンタムは弱い"
+ },
+ "openai/gpt-oss-20b|6098.T|2021-11-15": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も2倍未満であるため"
+ },
+ "openai/gpt-oss-20b|4063.T|2026-10-27": {
+  "score": 65,
+  "reason": "株価は+2.63%と5%未満だが、出来高が2倍に急増したため中程度のモメンタムと評価"
+ },
+ "openai/gpt-oss-20b|4063.T|2026-07-24": {
+  "score": 55,
+  "reason": "株価が大幅下落し、出来高も2倍未満であるため"
+ },
+ "openai/gpt-oss-20b|4063.T|2026-04-28": {
+  "score": 70,
+  "reason": "株価は+2.33%と大幅上昇ではないものの、出来高が2倍に増加し、一定のモメンタムが形成されているため70点と評価しました。"
+ },
+ "openai/gpt-oss-20b|4063.T|2026-01-27": {
+  "score": 30,
+  "reason": "株価が大幅下落し、出来高は増加したが、下落が大きいためモメンタムは低い"
+ },
+ "openai/gpt-oss-20b|4063.T|2025-10-24": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したものの、価格上昇がないため高スコアは付与できない"
+ },
+ "openai/gpt-oss-20b|4063.T|2025-07-23": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|4063.T|2025-04-25": {
+  "score": 85,
+  "reason": "株価が+6.60%上昇し、出来高が2.3倍に増加したため"
+ },
+ "openai/gpt-oss-20b|4063.T|2025-01-28": {
+  "score": 55,
+  "reason": "株価が下落し、モメンタムは弱い"
+ },
+ "openai/gpt-oss-20b|4063.T|2024-10-25": {
+  "score": 55,
+  "reason": "株価が下落し、上昇幅が不足したため低スコア"
+ },
+ "openai/gpt-oss-20b|4063.T|2024-07-26": {
+  "score": 75,
+  "reason": "株価が+8.57%上昇し、出来高は1.8倍であるため、強いモメンタムが期待できるが、出来高が2倍に満たないため80点未満と評価"
+ },
+ "openai/gpt-oss-20b|4063.T|2024-04-25": {
+  "score": 55,
+  "reason": "株価が下落し、モメンタムは弱い"
+ },
+ "openai/gpt-oss-20b|4063.T|2024-01-26": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は2倍未満であるため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|4063.T|2023-10-27": {
+  "score": 70,
+  "reason": "株価は+4.39%で大幅上昇ではないが、出来高が3.8倍と非常に高いため、翌営業日以降に強いモメンタムが形成される可能性がある"
+ },
+ "openai/gpt-oss-20b|4063.T|2023-07-26": {
+  "score": 55,
+  "reason": "Price rose only 0.20% and volume increased 1.3×, insufficient for strong momentum."
+ },
+ "openai/gpt-oss-20b|4063.T|2023-04-27": {
+  "score": 55,
+  "reason": "株価が下落し、反応が薄い"
+ },
+ "openai/gpt-oss-20b|4063.T|2023-01-26": {
+  "score": 70,
+  "reason": "株価上昇は5%未満だが出来高が3.5倍であるため、やや高いスコアを付与"
+ },
+ "openai/gpt-oss-20b|4063.T|2022-10-27": {
+  "score": 55,
+  "reason": "株価がわずかに下落し、出来高は増加したものの、上昇幅が不足しているため低スコア"
+ },
+ "openai/gpt-oss-20b|4063.T|2022-07-27": {
+  "score": 70,
+  "reason": "株価上昇は5%未満で、モメンタムは限定的"
+ },
+ "openai/gpt-oss-20b|4063.T|2022-04-26": {
+  "score": 55,
+  "reason": "Price declined and volume only modestly increased, indicating weak momentum."
+ },
+ "openai/gpt-oss-20b|4063.T|2022-01-27": {
+  "score": 85,
+  "reason": "株価が+7.62%上昇し、出来高が2倍以上増加したため"
+ },
+ "openai/gpt-oss-20b|6857.T|2026-10-27": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も増加していないため"
+ },
+ "openai/gpt-oss-20b|6857.T|2026-07-29": {
+  "score": 70,
+  "reason": "株価が大幅上昇したが出来高は2倍に達していない"
+ },
+ "openai/gpt-oss-20b|6857.T|2026-04-27": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加しないため"
+ },
+ "openai/gpt-oss-20b|6857.T|2026-01-28": {
+  "score": 70,
+  "reason": "株価が5%以上上昇したが出来高は2倍に達していないため"
+ },
+ "openai/gpt-oss-20b|6857.T|2025-10-28": {
+  "score": 90,
+  "reason": "株価が大幅上昇し、出来高も急増したため"
+ },
+ "openai/gpt-oss-20b|6857.T|2025-07-29": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したものの、上昇率が5%未満であるため低スコア"
+ },
+ "openai/gpt-oss-20b|6857.T|2025-04-24": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も2倍未満のため低スコア"
+ },
+ "openai/gpt-oss-20b|6857.T|2025-01-28": {
+  "score": 55,
+  "reason": "株価は+4.36%と5%未満で、出来高も0.9倍と低迷しているため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|6857.T|2024-10-30": {
+  "score": 85,
+  "reason": "株価が+6.43%上昇し、出来高が2倍に増加したため高スコア"
+ },
+ "openai/gpt-oss-20b|6857.T|2024-07-31": {
+  "score": 90,
+  "reason": "株価が大幅上昇し、出来高も急増したため"
+ },
+ "openai/gpt-oss-20b|6857.T|2024-04-25": {
+  "score": 55,
+  "reason": "株価上昇率が5%未満で出来高も増加なし"
+ },
+ "openai/gpt-oss-20b|6857.T|2024-01-31": {
+  "score": 55,
+  "reason": "株価上昇率が5%未満で出来高も2倍未満"
+ },
+ "openai/gpt-oss-20b|6857.T|2023-10-31": {
+  "score": 55,
+  "reason": "株価が下落し、モメンタムは弱い"
+ },
+ "openai/gpt-oss-20b|6857.T|2023-07-25": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加に留まったため"
+ },
+ "openai/gpt-oss-20b|6857.T|2023-04-26": {
+  "score": 50,
+  "reason": "株価が大幅下落し、出来高は増加したが、上昇モメンタムは形成されていない"
+ },
+ "openai/gpt-oss-20b|6857.T|2023-01-30": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加しないため"
+ },
+ "openai/gpt-oss-20b|6857.T|2022-10-27": {
+  "score": 65,
+  "reason": "株価上昇は5%未満だが出来高が2倍以上であるため、翌営業日以降の大幅上昇は可能性があるが確実ではない"
+ },
+ "openai/gpt-oss-20b|6857.T|2022-07-27": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したものの、上昇幅が不足しているため低スコア"
+ },
+ "openai/gpt-oss-20b|6857.T|2022-04-27": {
+  "score": 55,
+  "reason": "株価上昇は5%未満で出来高も2倍未満"
+ },
+ "openai/gpt-oss-20b|6857.T|2022-01-26": {
+  "score": 50,
+  "reason": "株価が5%以上下落したため、強いモメンタムは形成されないと判断"
+ },
+ "openai/gpt-oss-20b|7267.T|2026-08-05": {
+  "score": 55,
+  "reason": "Price fell slightly and volume modest, no strong momentum"
+ },
+ "openai/gpt-oss-20b|7267.T|2026-05-14": {
+  "score": 70,
+  "reason": "株価が+5%以上上昇したが、出来高は2倍未満であるため、強力なモメンタムはやや弱いと評価"
+ },
+ "openai/gpt-oss-20b|7267.T|2026-02-10": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加しないため低スコア"
+ },
+ "openai/gpt-oss-20b|7267.T|2025-11-07": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も2倍未満であるため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|7267.T|2025-08-06": {
+  "score": 55,
+  "reason": "株価が下落し、出来高は増加したがモメンタムは弱い"
+ },
+ "openai/gpt-oss-20b|7267.T|2025-05-13": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も2倍未満であるため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|7267.T|2025-02-13": {
+  "score": 55,
+  "reason": "株価上昇は5%未満で出来高も2倍未満"
+ },
+ "openai/gpt-oss-20b|7267.T|2024-11-05": {
+  "score": 55,
+  "reason": "株価が大幅下落し、出来高は増加したがモメンタムは弱い"
+ },
+ "openai/gpt-oss-20b|7267.T|2024-08-07": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も減少したため"
+ },
+ "openai/gpt-oss-20b|7267.T|2024-05-10": {
+  "score": 55,
+  "reason": "株価上昇はわずかで出来高も2倍に満たないため"
+ },
+ "openai/gpt-oss-20b|7267.T|2024-02-07": {
+  "score": 55,
+  "reason": "Price increase modest and volume unchanged, indicating weak momentum."
+ },
+ "openai/gpt-oss-20b|7267.T|2023-11-09": {
+  "score": 55,
+  "reason": "株価が下落し、上昇ではないため低スコア"
+ },
+ "openai/gpt-oss-20b|7267.T|2023-08-08": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加に留まったため"
+ },
+ "openai/gpt-oss-20b|7267.T|2023-05-10": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加しないため"
+ },
+ "openai/gpt-oss-20b|7267.T|2023-02-09": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加しすぎないため、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|7267.T|2022-11-08": {
+  "score": 50,
+  "reason": "株価が下落し、出来高も変動なし"
+ },
+ "openai/gpt-oss-20b|7267.T|2022-08-09": {
+  "score": 55,
+  "reason": "Price increase modest and volume not doubled."
+ },
+ "openai/gpt-oss-20b|7267.T|2022-05-12": {
+  "score": 55,
+  "reason": "株価上昇は5%未満で出来高も増加なし"
+ },
+ "openai/gpt-oss-20b|7267.T|2022-02-08": {
+  "score": 55,
+  "reason": "株価上昇が小幅で出来高も増加率が低く、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|7267.T|2021-11-04": {
+  "score": 50,
+  "reason": "株価が下落し、出来高も減少したため、翌営業日以降に大幅高・強力なモメンタムが形成される可能性は低いと判断されます"
+ },
+ "openai/gpt-oss-20b|9433.T|2026-08-07": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加しないため"
+ },
+ "openai/gpt-oss-20b|9433.T|2026-05-12": {
+  "score": 55,
+  "reason": "株価上昇が小幅で出来高も増加率が低く、強いモメンタムは期待できない"
+ },
+ "openai/gpt-oss-20b|9433.T|2026-03-31": {
+  "score": 55,
+  "reason": "株価が下落し、出来高も増加に留まったため"
+ },
+ "openai/gpt-oss-20b|9433.T|2025-11-06": {
+  "score": 55,
+  "reason": "株価上昇が5%未満で出来高も2倍未満"
+ },
+ "openai/gpt-oss-20b|4452.T|2025-05-08": {
+  "score": 85,
+  "reason": "株価が+6.40%上昇し、出来高が3.1倍に急増したため"
+ }
+}

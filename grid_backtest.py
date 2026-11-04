@@ -73,13 +73,20 @@ def collect_events(ticker: str, cache: dict, bench) -> list[dict]:
   df["Date"] = pd.to_datetime(df["Date"]).dt.tz_localize(None)
   df = df.sort_values("Date").reset_index(drop=True)
 
-  try:
-    ed = stock.earnings_dates
-    if ed is None or ed.empty:
-      print("  └─ ⚠️ 決算日データなし。スキップ")
-      return []
-  except Exception:
+  # Yahoo 側の一時的な失敗があるため、例外時は待って再試行する
+  ed = None
+  for attempt in range(3):
+    try:
+      ed = stock.earnings_dates
+      break
+    except Exception as e:
+      print(f"  └─ ⚠️ 決算日データ取得失敗 ({type(e).__name__}: {e})。再試行 {attempt + 1}/3")
+      time.sleep(10 * (attempt + 1))
+  else:
     print("  └─ ⚠️ 決算日データ取得失敗。スキップ")
+    return []
+  if ed is None or ed.empty:
+    print("  └─ ⚠️ 決算日データなし。スキップ")
     return []
   ed = ed.reset_index()
   ed["Earnings Date"] = pd.to_datetime(ed["Earnings Date"]).dt.tz_localize(None)

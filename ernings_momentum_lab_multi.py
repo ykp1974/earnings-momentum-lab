@@ -4,7 +4,7 @@ import json
 import os
 import time
 from dotenv import load_dotenv
-from openai import OpenAI
+from openai import OpenAI, RateLimitError
 import pandas as pd
 import yfinance as yf
 
@@ -19,7 +19,11 @@ SCORE_THRESHOLD = int(os.getenv("SCORE_THRESHOLD", "80"))
 HOLD_DAYS = int(os.getenv("HOLD_DAYS", "5"))
 
 LLM_PROVIDER = os.getenv("LLM_PROVIDER", "groq").lower()
-LLM_MODEL = os.getenv("LLM_MODEL", "llama-3.1-8b-instant")
+LLM_MODEL = os.getenv("LLM_MODEL", "openai/gpt-oss-20b")
+# 1 回の評価で生成させる最大トークン数 (Groq 無料枠のトークン上限対策)
+LLM_MAX_TOKENS = int(os.getenv("LLM_MAX_TOKENS", "500"))
+# 429 (レート制限) 時のリトライ回数
+LLM_MAX_RETRIES = int(os.getenv("LLM_MAX_RETRIES", "5"))
 
 
 # ------------------------------------------------------------------------------
@@ -82,6 +86,8 @@ def get_active_model_name(requested_model: str) -> str:
     ]
 
     preferred_keywords = [
+        "gpt-oss-20b",
+        "gpt-oss-120b",
         "llama-3.3",
         "llama-3.1-8b",
         "llama-3.1-70b",
@@ -103,7 +109,7 @@ def get_active_model_name(requested_model: str) -> str:
   except Exception as e:
     print(f"モデル一覧検証エラー: {e}")
 
-  return "llama-3.1-8b-instant"
+  return "openai/gpt-oss-20b"
 
 
 ACTIVE_MODEL = get_active_model_name(LLM_MODEL)
@@ -141,12 +147,35 @@ def evaluate_earnings_with_llm(
             {"role": "user", "content": user_prompt},
         ],
         "temperature": 0.1,
+        "max_tokens": LLM_MAX_TOKENS,
     }
+
+    # 推論 (思考) モデルは思考トークンを大量に消費するため、思考量を抑える
+    if LLM_PROVIDER == "groq":
+      if "gpt-oss" in ACTIVE_MODEL:
+        kwargs["reasoning_effort"] = "low"
+      elif "qwen3" in ACTIVE_MODEL:
+        kwargs["reasoning_effort"] = "none"
 
     if LLM_PROVIDER in ["groq", "deepseek"]:
       kwargs["response_format"] = {"type": "json_object"}
 
-    response = client.chat.completions.create(**kwargs)
+    # 429 は Groq の指定秒数だけ待って再試行する
+    # (1 日のトークン上限 TPD も直近 24 時間の移動枠なので、数分待てば回復する)
+    for attempt in range(LLM_MAX_RETRIES + 1):
+      try:
+        response = client.chat.completions.create(**kwargs)
+        break
+      except RateLimitError as e:
+        if attempt >= LLM_MAX_RETRIES:
+          raise
+        retry_after = e.response.headers.get("retry-after")
+        wait_sec = float(retry_after) + 2 if retry_after else 30.0 * (attempt + 1)
+        print(
+            f"  [{ticker} {earnings_date_str}] レート制限 (429)。"
+            f"{wait_sec:.0f} 秒待機して再試行 ({attempt + 1}/{LLM_MAX_RETRIES})..."
+        )
+        time.sleep(wait_sec)
     raw_text = response.choices[0].message.content.strip()
 
     cleaned_text = raw_text
