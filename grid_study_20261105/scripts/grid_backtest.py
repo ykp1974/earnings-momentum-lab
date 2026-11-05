@@ -5,9 +5,16 @@
 import itertools
 import json
 import os
+import sys
 
 import pandas as pd
 import yfinance as yf
+
+# プロジェクト直下（ernings_momentum_lab_multi.py の場所）を import パスと作業ディレクトリにする
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+sys.path.insert(0, ROOT)
+os.chdir(ROOT)
+STUDY = os.path.join(ROOT, "grid_study_20261105")
 
 # LLM 評価関数・設定は既存スクリプトを再利用する
 from ernings_momentum_lab_multi import (
@@ -29,9 +36,9 @@ YEARS_LIST = [3, 5]
 MAX_YEARS = max(YEARS_LIST)
 MIN_TRADES = 20  # ランキング対象とする最小トレード数
 
-CACHE_FILE = "llm_score_cache.json"
-EVENTS_FILE = "grid_events.csv"
-GRID_RESULT_FILE = "grid_result.csv"
+CACHE_FILE = os.path.join(STUDY, "cache", "llm_score_cache.json")
+EVENTS_FILE = os.path.join(STUDY, "data", "grid_events.csv")
+GRID_RESULT_FILE = os.path.join(STUDY, "data", "grid_result.csv")
 
 
 # ------------------------------------------------------------------------------
