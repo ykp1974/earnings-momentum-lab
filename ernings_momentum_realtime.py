@@ -1,6 +1,7 @@
 # 当日決算銘柄 リアルタイム自動判定 & S株買い候補抽出スクリプト
 # (TDnet リアルタイム取得 ➔ 過去日付・銘柄指定フォールバック ➔ LLM モメンタム判定)
 
+import argparse
 from datetime import datetime
 import json
 import os
@@ -29,11 +30,36 @@ LLM_MAX_TOKENS = int(os.getenv("LLM_MAX_TOKENS", "500"))
 LLM_MAX_RETRIES = int(os.getenv("LLM_MAX_RETRIES", "3"))
 TICKER_LIST_FILE = os.getenv("TICKER_LIST_FILE", "ticker_list.txt")
 
-# 日付指定パラメータ (.env から取得。未指定・空欄時は本日)
-TARGET_DATE_ENV = os.getenv("TARGET_DATE", "").strip()
+# 日付・銘柄の指定は .env ではなくコマンドライン引数で行う
+# (.env の書き換え忘れによる「古い日付・古いテスト銘柄での実行」を防ぐため)
+_parser = argparse.ArgumentParser(description="当日決算銘柄の判定 & S株買い候補抽出")
+_parser.add_argument(
+    "--date",
+    default="",
+    help="判定基準日 YYYY-MM-DD (省略時は本日)",
+)
+_parser.add_argument(
+    "--tickers",
+    default="",
+    help="テスト用の銘柄指定 例: 3697,7730,7818 (省略時は TDnet の全決算が対象)",
+)
+_args, _ = _parser.parse_known_args()
+
+# 日付指定パラメータ (未指定・空欄時は本日)
+TARGET_DATE_ENV = _args.date.strip()
+if TARGET_DATE_ENV:
+  try:
+    datetime.strptime(TARGET_DATE_ENV, "%Y-%m-%d")
+  except ValueError:
+    sys.exit(f"--date は YYYY-MM-DD 形式で指定してください: {TARGET_DATE_ENV}")
 
 # 直接テスト用銘柄指定 (例: "3697,7730,7818" または空欄)
-TARGET_TICKERS_ENV = os.getenv("TARGET_TICKERS", "").strip()
+TARGET_TICKERS_ENV = _args.tickers.strip()
+
+# .env に旧方式の指定が残っていても無視する (残っていたら気づけるよう警告)
+for _name in ("TARGET_DATE", "TARGET_TICKERS"):
+  if os.getenv(_name, "").strip():
+    print(f"⚠️ .env の {_name} は無視します (--date / --tickers 引数で指定してください)")
 
 
 # ------------------------------------------------------------------------------
